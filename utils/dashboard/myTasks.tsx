@@ -4,10 +4,8 @@ import { ITask } from "@/types/root";
 // Filter related helper functions
 export const filterTasksBySearch = (tasks: ITask[], searchTerm: string) => {
   if (!searchTerm) return tasks;
-  return tasks.filter(
-    (task) =>
-      task.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      task.description.toLowerCase().includes(searchTerm.toLowerCase())
+  return tasks.filter((task) =>
+    task.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 };
 
