@@ -5,7 +5,7 @@ export const dashboardCards = [
     key: "task",
     title: "Total Tasks",
     description: (isManager: boolean): string =>
-      isManager ? "All tasks" : "Assigned or created by you",
+      isManager ? "All tasks" : "Assigned to you",
     Icon: CheckSquare,
   },
   {

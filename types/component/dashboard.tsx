@@ -4,7 +4,7 @@ import { ITask } from "../root";
 
 export interface IDashboardCardProps {
   title: string;
-  isManager: boolean;
+  description: string;
   value: number;
   Icon: ForwardRefExoticComponent<
     Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>

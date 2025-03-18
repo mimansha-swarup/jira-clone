@@ -4,7 +4,7 @@ import { IDashboardCardProps } from "@/types/component/dashboard";
 
 const DashboardCard: FC<IDashboardCardProps> = ({
   title,
-  isManager,
+  description,
   value,
   Icon,
 }) => {
@@ -16,9 +16,7 @@ const DashboardCard: FC<IDashboardCardProps> = ({
       </CardHeader>
       <CardContent>
         <div className="text-2xl font-bold">{value}</div>
-        <p className="text-xs text-muted-foreground">
-          {isManager ? "All tasks" : "Assigned to you"}
-        </p>
+        <p className="text-xs text-muted-foreground">{description}</p>
       </CardContent>
     </Card>
   );

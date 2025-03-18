@@ -44,7 +44,7 @@ export default function Dashboard() {
           <DashboardCard
             key={card.key}
             title={card.title}
-            isManager={isManager}
+            description={card.description(isManager)}
             value={cardValue[card.key]}
             Icon={card.Icon}
           />
