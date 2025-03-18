@@ -30,3 +30,9 @@ export interface ITaskStatusDialogProps {
   selectedTask: ITask | null;
   updateStatus: (status: TaskStatus) => void;
 }
+export interface IApprovalDialogProps {
+  isOpen: boolean;
+  onChange: (e: boolean) => void;
+  selectedTask: ITask | null;
+  handleTaskApproval: (e: boolean) => void;
+}

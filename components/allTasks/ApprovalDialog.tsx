@@ -10,7 +10,9 @@ import {
 } from "@/components/ui/dialog";
 import { CheckCircle2, XCircle } from "lucide-react";
 import { formatTimeSpent, getUserName } from "@/utils/dashboard/myTasks";
-const ApprovalDialog = ({
+import { FC } from "react";
+import { IApprovalDialogProps } from "@/types/component/filter";
+const ApprovalDialog: FC<IApprovalDialogProps> = ({
   isOpen,
   onChange,
   selectedTask,
