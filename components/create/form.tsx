@@ -88,7 +88,6 @@ const DetailForm = () => {
   }, [id]);
 
   const handleFormDataChange = (fieldName: string) => (value: unknown) => {
-
     if (["priority", "status"].includes(fieldName) && !value) {
       return;
     }
@@ -291,7 +290,7 @@ const DetailForm = () => {
           Cancel
         </Button>
         <Button type="submit" disabled={isSubmitting}>
-          {isSubmitting ? "Creating..." : "Create Task"}
+          {isSubmitting ? "Saving..." : "Saving"}
         </Button>
       </div>
     </form>
