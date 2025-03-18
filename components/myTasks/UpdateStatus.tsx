@@ -30,7 +30,7 @@ const UpdateStatus: FC<ITaskStatusDialogProps> = ({
 
         <div className="grid gap-4 py-4">
           <div className="grid grid-cols-2 gap-4">
-            {statusOptions.map((button) => (
+            {statusOptions?.slice(1).map((button) => (
               <Button
                 key={button.value}
                 variant="outline"
