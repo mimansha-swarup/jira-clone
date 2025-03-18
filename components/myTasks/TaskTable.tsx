@@ -77,7 +77,7 @@ const TaskTable: FC<ITaskTableProps> = ({
               </TableCell>
               <TableCell>
                 <span
-                  className={`rounded-full px-2 py-1 text-xs font-semibold ${getStatusColor(
+                  className={`rounded-full px-2 py-1 text-xs font-semibold text-nowrap ${getStatusColor(
                     task.status
                   )}`}
                 >
@@ -97,7 +97,9 @@ const TaskTable: FC<ITaskTableProps> = ({
                   ? format(new Date(task.dueDate), "MMM d, yyyy")
                   : "No due date"}
               </TableCell>
-              <TableCell>{formatTimeSpent(task.timeSpent)}</TableCell>
+              <TableCell className="text-nowrap">
+                {formatTimeSpent(task.timeSpent)}
+              </TableCell>
               <TableCell>
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
