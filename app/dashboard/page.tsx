@@ -23,7 +23,7 @@ export default function Dashboard() {
   const userTasks = isManager
     ? tasks
     : tasks.filter(
-        (task) => task.assignee === user?.id || task.createdBy === user?.id
+        (task) => task.assignee === user?.id 
       );
 
   const cardValue: Record<string, number> = {
