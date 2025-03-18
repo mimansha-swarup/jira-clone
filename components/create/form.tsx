@@ -43,6 +43,7 @@ const INITIAL_FORM: ITaskForm = {
 const DetailForm = () => {
   const { user } = useAuth();
   const { id } = useParams<{ id: string }>();
+  const [open, setOpen] = useState(false);
   const router = useRouter();
   const [formData, setFormData] = useState({
     ...INITIAL_FORM,
@@ -95,6 +96,9 @@ const DetailForm = () => {
       ...prev,
       [fieldName]: value,
     }));
+    if (fieldName === "dueDate") {
+      setOpen(false);
+    }
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -256,9 +260,10 @@ const DetailForm = () => {
 
           <div className="grid gap-2">
             <Label htmlFor="dueDate">Due Date</Label>
-            <Popover>
+            <Popover open={open} onOpenChange={setOpen}>
               <PopoverTrigger asChild>
                 <Button
+                  onClick={() => setOpen(true)}
                   id="dueDate"
                   variant="outline"
                   className={cn(
@@ -277,6 +282,9 @@ const DetailForm = () => {
                   mode="single"
                   selected={formData.dueDate ?? undefined}
                   onSelect={handleFormDataChange("dueDate")}
+                  disabled={(date) =>
+                    date < new Date(new Date().setHours(0, 0, 0, 0))
+                  }
                   initialFocus
                 />
               </PopoverContent>
